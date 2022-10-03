@@ -1,16 +1,19 @@
 import java.util.Scanner;
-class string
-{
-    public static void main(String args[])
+class Problem5 {
+    public static String reverse(String s) 
     {
-        Scanner sc=new Scanner(System.in);
-        String str=sc.nextLine();
-        int n;
-        n=str.length();
-        for(int i=n-1;i>-1;i--)
-        {
-            char ch=str.charAt(i);
-            System.out.print(ch);
-        }
+    int x = s.indexOf(" ");
+    if(x == -1)
+      return s;
+    return reverse(s.substring(x+1))+" "+s.substring(0, x);
     }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String rev = reverse(s1);
+	    System.out.println(rev);
+		
+	}
+
 }
